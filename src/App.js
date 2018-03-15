@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import Sidebar from "./Sidebar";
-import LoginPage from './LoginPage';
-import RegisterPage from './RegisterPage';
+import Login from './Login';
+import Register from './Register';
 import Gallery from './Gallery';
 import CategoryPage from './CategoryPage';
 
 import {BrowserRouter, Switch, Route} from "react-router-dom";
-
-import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const Homepage = () => (
   <Gallery />
@@ -24,8 +22,6 @@ class App extends Component {
     }
   }
 
-  
-
   render() {
 
     return (
@@ -33,12 +29,10 @@ class App extends Component {
         <div className="App">
           <Sidebar/>
           <Switch>
-            <Route path="/~michele.james/" exact component={() => Homepage} />
-            <Route path="/~michele.james/build/LoginPage" component={ LoginPage } />
-            <Route path="/~michele.james/build/RegisterPage" component={ RegisterPage } />
-            <Route path="/~michele.james/build/CategoryPage" component={ CategoryPage }
+            <Route path="/~michele.james/" exact component={() => Homepage()} />
+            <Route path="/~michele.james/build/LoginPage" component={ Login } />
+            <Route path="/~michele.james/build/RegisterPage" component={ Register } />
             <Route path="/~michele.james/build/CategoryPage" component={ CategoryPage } />
-            <Route path="/~michele.james/build/ImageCollection" component={ ImageCollection } />
           </Switch>
          </div>
       </BrowserRouter>
